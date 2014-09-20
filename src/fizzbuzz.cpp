@@ -115,6 +115,17 @@ Context(AFizzBuzzConverter)
 		Assert::That(fizzBuzz(array4, 3), Equals("FizzBuzz, FizzBuzz, Fizz"));
 	}
 
+	Spec(ShouldOutputForAll_MixedNumbers)
+	{
+		int array[10] = {9};
+		Assert::That(fizzBuzz(array, 1), Equals("Fizz"));
+		int array2[10] = {9, 11};
+		Assert::That(fizzBuzz(array2, 2), Equals("Fizz, 11"));
+		int array3[10] = {1, 2, 7, 35};
+		Assert::That(fizzBuzz(array3, 4), Equals("1, 2, 7, Buzz"));
+		int array4[10] = {1, 2, 7, 13, 30, 222, 223, 13340, 13342};
+		Assert::That(fizzBuzz(array4, 9), Equals("1, 2, 7, 13, FizzBuzz, Fizz, 223, Buzz, 13342"));
+	}
 
 	/*Spec(ShouldInstructThatARegularLeapYearIsALeapYear)
 	{

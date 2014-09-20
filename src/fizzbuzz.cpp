@@ -13,34 +13,7 @@ using namespace std;
 
 #include <sstream>
 
-string convert_number_to_str2(int n)
-{
-	// cout << "received: "  << n << endl;
-	string conv = "";
-	char c_digit = '\0';
-	int digit;
-	for (int i = 10; n > 0; i = i*10) {
-		digit = n%i;
-		// cout << "digit: " << digit << endl;
-		c_digit = (char)(digit + '0');
-		// cout << "c_digit: " << c_digit << endl;
-		conv = c_digit + conv;
-		n = n/10;
-	}
-	// cout << "*** Converted to: " << conv << endl;
-	return conv;
-}
-
-string convert_number_to_str(int n)
-{
-	ostringstream conv;
-	conv.clear();
-	conv << n;
-	// cout << "out string: " << conv.str() << endl;
-	return conv.str();
-
-}
-
+string convert_number_to_str (int);
 
 string fizzBuzz (int i_array[], int size) {
 	string out = "";
@@ -126,23 +99,38 @@ Context(AFizzBuzzConverter)
 		int array4[10] = {1, 2, 7, 13, 30, 222, 223, 13340, 13342};
 		Assert::That(fizzBuzz(array4, 9), Equals("1, 2, 7, 13, FizzBuzz, Fizz, 223, Buzz, 13342"));
 	}
-
-	/*Spec(ShouldInstructThatARegularLeapYearIsALeapYear)
-	{
-		Assert::That(isLeapYear(2004), IsTrue());
-	}
-
-	Spec(ShouldInstructThatYearDivisibleBy100andNot400IsNotALeapYear)
-	{
-		Assert::That(isLeapYear(1900), IsFalse());
-	}
-
-	Spec(ShouldInstructThatYearDivisibleBy400IsALeapYear)
-	{
-		Assert::That(isLeapYear(2000), IsTrue());
-	}  */
 };
 
 
+string convert_number_to_str(int n)
+{
+	ostringstream conv;
+	conv.clear();
+	conv << n;
+	// cout << "out string: " << conv.str() << endl;
+	return conv.str();
 
+}
+
+
+/* deprecated version which is horrible, but here FWIW
+ *
+ */
+string convert_number_to_str2(int n)
+{
+	// cout << "received: "  << n << endl;
+	string conv = "";
+	char c_digit = '\0';
+	int digit;
+	for (int i = 10; n > 0; i = i*10) {
+		digit = n%i;
+		// cout << "digit: " << digit << endl;
+		c_digit = (char)(digit + '0');
+		// cout << "c_digit: " << c_digit << endl;
+		conv = c_digit + conv;
+		n = n/10;
+	}
+	// cout << "*** Converted to: " << conv << endl;
+	return conv;
+}
 

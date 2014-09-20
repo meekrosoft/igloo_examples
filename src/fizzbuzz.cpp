@@ -11,7 +11,9 @@ using namespace igloo;
 #include <iostream>
 using namespace std;
 
-string convert_number_to_str(int n)
+#include <sstream>
+
+string convert_number_to_str2(int n)
 {
 	// cout << "received: "  << n << endl;
 	string conv = "";
@@ -28,6 +30,17 @@ string convert_number_to_str(int n)
 	// cout << "*** Converted to: " << conv << endl;
 	return conv;
 }
+
+string convert_number_to_str(int n)
+{
+	ostringstream conv;
+	conv.clear();
+	conv << n;
+	// cout << "out string: " << conv.str() << endl;
+	return conv.str();
+
+}
+
 
 string fizzBuzz (int i_array[], int size) {
 	string out = "";

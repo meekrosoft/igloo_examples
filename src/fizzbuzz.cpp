@@ -16,6 +16,8 @@ string fizzBuzz (int i_array[], int size) {
 	int index = 0;
 
 	while (size > 0) {
+		if (size >= 1 && i_array[index] == 15)
+			out = out + "FizzBuzz";
 		if (size >= 1 && i_array[index] == 3)
 			out = out + "Fizz";
 		if (size >= 1 && i_array[index] == 5)

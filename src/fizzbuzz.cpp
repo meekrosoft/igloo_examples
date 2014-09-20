@@ -11,16 +11,23 @@ using namespace igloo;
 #include <iostream>
 using namespace std;
 
-string fizzBuzz (string input) {
-	return "";
+string fizzBuzz (int i_array[], int size) {
+	string out = "";
+
+	if (size >= 1 && i_array[0] == 3)
+		out = out + "Fizz";
+
+	return out;
 }
 
 Context(AFizzBuzzConverter)
 {
 	Spec(ShouldOutputFizzFor3)
 	{
-		Assert::That(fizzBuzz("3"), Equals("Fizz"));
+		int array[10] = {3};
+		Assert::That(fizzBuzz(array, 10), Equals("Fizz"));
 	}
+
 
 	/*Spec(ShouldInstructThatARegularLeapYearIsALeapYear)
 	{

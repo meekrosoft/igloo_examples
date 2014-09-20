@@ -56,6 +56,13 @@ Context(AFizzBuzzConverter)
 		int array2[10] = {5, 3};
 		Assert::That(fizzBuzz(array2, 2), Equals("Buzz, Fizz"));
 	}
+	Spec(ShouldOutputSameAsNumberWhenNot3or5orAMultiple)
+		{
+			int array[10] = {1};
+			Assert::That(fizzBuzz(array, 1), Equals("1"));
+			int array2[10] = {1, 2};
+			Assert::That(fizzBuzz(array2, 2), Equals("1, 2"));
+		}
 
 	/*Spec(ShouldInstructThatARegularLeapYearIsALeapYear)
 	{

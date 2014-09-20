@@ -41,6 +41,12 @@ Context(AFizzBuzzConverter)
 		Assert::That(fizzBuzz(array, 1), Equals("Buzz"));
 	}
 
+	Spec(ShouldOutputFizzBuzzFor15)
+		{
+			int array[10] = {15};
+			Assert::That(fizzBuzz(array, 1), Equals("FizzBuzz"));
+		}
+
 	Spec(ShouldOutputFizz_BuzzFor3And5)
 	{
 		int array[10] = {3, 5};

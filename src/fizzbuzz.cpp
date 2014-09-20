@@ -13,13 +13,17 @@ using namespace std;
 
 string fizzBuzz (int i_array[], int size) {
 	string out = "";
+	int index = 0;
 
-	if (size >= 1 && i_array[0] == 3)
-		out = out + "Fizz";
-	if (size >= 1 && i_array[0] == 5)
+	while (size > 0) {
+		if (size >= 1 && i_array[index] == 3)
+			out = out + "Fizz";
+		if (size >= 1 && i_array[index] == 5)
 			out = out + "Buzz";
-
-
+		size--; index++;
+		if (size != 0)
+			out = out + ", ";
+	}
 	return out;
 }
 
@@ -28,21 +32,21 @@ Context(AFizzBuzzConverter)
 	Spec(ShouldOutputFizzFor3)
 	{
 		int array[10] = {3};
-		Assert::That(fizzBuzz(array, 10), Equals("Fizz"));
+		Assert::That(fizzBuzz(array, 1), Equals("Fizz"));
 	}
 
 	Spec(ShouldOutputBuzzFor5)
 	{
 		int array[10] = {5};
-		Assert::That(fizzBuzz(array, 10), Equals("Buzz"));
+		Assert::That(fizzBuzz(array, 1), Equals("Buzz"));
 	}
 
-	Spec(ShouldOutputFizzBuzzFor3And5)
+	Spec(ShouldOutputFizz_BuzzFor3And5)
 	{
 		int array[10] = {3, 5};
-		Assert::That(fizzBuzz(array, 10), Equals("Fizz, Buzz"));
+		Assert::That(fizzBuzz(array, 2), Equals("Fizz, Buzz"));
 		int array2[10] = {5, 3};
-		Assert::That(fizzBuzz(array2,10), Equals("Buzz, Fizz"));
+		Assert::That(fizzBuzz(array2, 2), Equals("Buzz, Fizz"));
 	}
 
 	/*Spec(ShouldInstructThatARegularLeapYearIsALeapYear)

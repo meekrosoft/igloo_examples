@@ -13,7 +13,9 @@ using namespace std;
 
 #include <sstream>
 
+// two helper functions
 string convert_number_to_str (int);
+string operator + (string& in, int number);
 
 string fizzBuzz (int i_array[], int size) {
 	string out = "";
@@ -28,7 +30,8 @@ string fizzBuzz (int i_array[], int size) {
 			out = out + "Buzz";
 		else
 			// out = out + convert_number_to_str(i_array[index]);
-			out = out + (char)(i_array[index]);
+			// out = out + (char)(i_array[index]);
+			out = out + i_array[index];
 
 		size--; index++;
 		if (size != 0)
@@ -102,6 +105,11 @@ Context(AFizzBuzzConverter)
 	}
 };
 
+string operator + (string& in, int number) {
+		string num_str = convert_number_to_str(number);
+		in = in + num_str;
+		return in;
+}
 
 string convert_number_to_str(int n)
 {
@@ -112,7 +120,6 @@ string convert_number_to_str(int n)
 	return conv.str();
 
 }
-
 
 /* deprecated version which is horrible, but here FWIW
  *
@@ -134,4 +141,3 @@ string convert_number_to_str2(int n)
 	// cout << "*** Converted to: " << conv << endl;
 	return conv;
 }
-

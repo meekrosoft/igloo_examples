@@ -47,11 +47,11 @@ string fizzBuzz (int i_array[], int size) {
 	int index = 0;
 
 	while (size > 0) {
-		if (size >= 1 && i_array[index] == 15)
+		if (size >= 1 && (i_array[index]%3 == 0 && i_array[index]%5 == 0))
 			out = out + "FizzBuzz";
-		else if (size >= 1 && i_array[index] == 3)
+		else if (size >= 1 && i_array[index]%3 == 0)
 			out = out + "Fizz";
-		else if (size >= 1 && i_array[index] == 5)
+		else if (size >= 1 && i_array[index]%5 == 0)
 			out = out + "Buzz";
 		else
 			out = out + convert_number_to_str(i_array[index]);
@@ -90,6 +90,7 @@ Context(AFizzBuzzConverter)
 		int array2[10] = {5, 3};
 		Assert::That(fizzBuzz(array2, 2), Equals("Buzz, Fizz"));
 	}
+
 	Spec(ShouldOutputSameAsNumber_WhenNot3or5or_NotAMultipleOfEither)
 		{
 			int array[10] = {1};
@@ -98,9 +99,22 @@ Context(AFizzBuzzConverter)
 			Assert::That(fizzBuzz(array2, 2), Equals("1, 2"));
 			int array3[10] = {1, 2, 7, 13};
 			Assert::That(fizzBuzz(array3, 4), Equals("1, 2, 7, 13"));
-			int array4[10] = {1, 2, 7, 13, 222, 13340};
-			Assert::That(fizzBuzz(array4, 6), Equals("1, 2, 7, 13, 222, 13340"));
+			int array4[10] = {1, 2, 7, 13, 223, 13342};
+			Assert::That(fizzBuzz(array4, 6), Equals("1, 2, 7, 13, 223, 13342"));
 		}
+
+	Spec(ShouldOutputFizzAndBuzzWhenMultipesOf_3or5or_Both)
+	{
+		int array[10] = {9};
+		Assert::That(fizzBuzz(array, 1), Equals("Fizz"));
+		int array2[10] = {9, 10};
+		Assert::That(fizzBuzz(array2, 2), Equals("Fizz, Buzz"));
+		int array3[10] = {3, 5, 15};
+		Assert::That(fizzBuzz(array3, 3), Equals("Fizz, Buzz, FizzBuzz"));
+		int array4[10] = {15, 30, 9};
+		Assert::That(fizzBuzz(array4, 3), Equals("FizzBuzz, FizzBuzz, Fizz"));
+	}
+
 
 	/*Spec(ShouldInstructThatARegularLeapYearIsALeapYear)
 	{

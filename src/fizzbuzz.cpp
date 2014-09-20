@@ -18,10 +18,13 @@ string fizzBuzz (int i_array[], int size) {
 	while (size > 0) {
 		if (size >= 1 && i_array[index] == 15)
 			out = out + "FizzBuzz";
-		if (size >= 1 && i_array[index] == 3)
+		else if (size >= 1 && i_array[index] == 3)
 			out = out + "Fizz";
-		if (size >= 1 && i_array[index] == 5)
+		else if (size >= 1 && i_array[index] == 5)
 			out = out + "Buzz";
+		else
+			out = out + (char)(i_array[index] + '0');
+
 		size--; index++;
 		if (size != 0)
 			out = out + ", ";
@@ -56,12 +59,14 @@ Context(AFizzBuzzConverter)
 		int array2[10] = {5, 3};
 		Assert::That(fizzBuzz(array2, 2), Equals("Buzz, Fizz"));
 	}
-	Spec(ShouldOutputSameAsNumberWhenNot3or5orAMultiple)
+	Spec(ShouldOutputSameAsNumber_WhenNot3or5or_NotAMultipleOfEither)
 		{
 			int array[10] = {1};
 			Assert::That(fizzBuzz(array, 1), Equals("1"));
 			int array2[10] = {1, 2};
 			Assert::That(fizzBuzz(array2, 2), Equals("1, 2"));
+			int array3[10] = {1, 2, 7, 13};
+			Assert::That(fizzBuzz(array3, 4), Equals("1, 2, 7, 13"));
 		}
 
 	/*Spec(ShouldInstructThatARegularLeapYearIsALeapYear)

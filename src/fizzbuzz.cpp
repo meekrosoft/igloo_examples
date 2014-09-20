@@ -27,7 +27,8 @@ string fizzBuzz (int i_array[], int size) {
 		else if (i_array[index]%5 == 0)
 			out = out + "Buzz";
 		else
-			out = out + convert_number_to_str(i_array[index]);
+			// out = out + convert_number_to_str(i_array[index]);
+			out = out + (char)(i_array[index]);
 
 		size--; index++;
 		if (size != 0)

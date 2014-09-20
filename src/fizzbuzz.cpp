@@ -16,6 +16,9 @@ string fizzBuzz (int i_array[], int size) {
 
 	if (size >= 1 && i_array[0] == 3)
 		out = out + "Fizz";
+	if (size >= 1 && i_array[0] == 5)
+			out = out + "Buzz";
+
 
 	return out;
 }

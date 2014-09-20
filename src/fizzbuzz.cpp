@@ -28,6 +28,11 @@ Context(AFizzBuzzConverter)
 		Assert::That(fizzBuzz(array, 10), Equals("Fizz"));
 	}
 
+	Spec(ShouldOutputBuzzFor5)
+	{
+		int array[10] = {5};
+		Assert::That(fizzBuzz(array, 10), Equals("Buzz"));
+	}
 
 	/*Spec(ShouldInstructThatARegularLeapYearIsALeapYear)
 	{

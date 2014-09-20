@@ -20,7 +20,7 @@ string fizzBuzz (int i_array[], int size) {
 	int index = 0;
 
 	while (size > 0) {
-		if (size >= 1 && (i_array[index]%3 == 0 && i_array[index]%5 == 0))
+		if (size >= 1 && i_array[index]%15 == 0)
 			out = out + "FizzBuzz";
 		else if (size >= 1 && i_array[index]%3 == 0)
 			out = out + "Fizz";

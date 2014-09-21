@@ -1,2 +1,9 @@
+#################
+## Eclipse
+#################
 .cproject
-.project
+
+# CDT-specific
+.cproject
+
+/Debug/

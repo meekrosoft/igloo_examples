@@ -44,8 +44,10 @@ Context(AFizzBuzzConverter)
 {
 	Spec(ShouldOutputFizzFor3)
 	{
-		int array[10] = {3};
-		Assert::That(fizzBuzz(array, 1), Equals("Fizz"));
+		// int array[10] = {3};
+		// maybe, this whole set of tests will look more elegant if
+		// vectors are used?
+		Assert::That(fizzBuzz((int[]){3}, 1), Equals("Fizz"));
 	}
 
 	Spec(ShouldOutputBuzzFor5)

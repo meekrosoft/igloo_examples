@@ -21,12 +21,9 @@ string fizzBuzz (int i_array[], int size) {
 	string out = "";
 	string add_s = ""; // what to add?
 
-	for (int index = 0;
-			size > 0;
-				add_s.clear(),
-				size--, index++,
-				({if (size > 0)
-					out = out + ", ";}))
+	for (int index = 0; // start from the front
+		 size > 0;
+		 add_s.clear(), size--, index++)
 	{
 		if (i_array[index] %3 == 0)
 			add_s =  "Fizz";
@@ -34,12 +31,17 @@ string fizzBuzz (int i_array[], int size) {
 			add_s = add_s + "Buzz";
 		if (i_array[index] %7 == 0)
 			add_s = add_s + "Mix";
+
 		if (add_s.empty())
 			out = out + i_array[index];
 		else
 			out = out + add_s;
+		out = out + ", "; // delimiter required
 	}
+	// return without the last redundant delimiter
+	out.erase(out.length()-2, 2);
 	return out;
+
 }
 
 Context(AFizzBuzzConverter)

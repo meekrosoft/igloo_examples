@@ -23,18 +23,19 @@ string fizzBuzz (int i_array[], int size) {
 
 	for (int index = 0;
 			size > 0;
-			size--, index++,
-			({if (size > 0)
-				out = out + ", ";}))
+				add_s.clear(),
+				size--, index++,
+				({if (size > 0)
+					out = out + ", ";}))
 	{
 		if (i_array[index] %3 == 0)
 			add_s =  "Fizz";
 		if (i_array[index] %5 == 0)
 			add_s = add_s + "Buzz";
 		if (add_s.empty())
-			add_s = add_s + i_array[index];
-		out = out + add_s;
-		add_s.clear();
+			out = out + i_array[index];
+		else
+			out = out + add_s;
 	}
 	return out;
 }

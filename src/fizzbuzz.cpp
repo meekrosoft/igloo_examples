@@ -21,8 +21,12 @@ string fizzBuzz (int i_array[], int size) {
 	string out = "";
 	string add_s = ""; // what to add?
 
-	int index = 0;     // start from the front
-	while (size > 0) {
+	for (int index = 0;
+			size > 0;
+			size--, index++,
+			({if (size > 0)
+				out = out + ", ";}))
+	{
 		if (i_array[index] %3 == 0)
 			add_s =  "Fizz";
 		if (i_array[index] %5 == 0)
@@ -31,10 +35,6 @@ string fizzBuzz (int i_array[], int size) {
 			add_s = add_s + i_array[index];
 		out = out + add_s;
 		add_s.clear();
-
-		size--; index++;
-		if (size != 0)
-			out = out + ", ";
 	}
 	return out;
 }

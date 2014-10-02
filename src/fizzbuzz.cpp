@@ -118,9 +118,11 @@ Context(AFizzBuzzConverter)
 };
 
 string operator + (string& in, int number) {
-		string num_str = convert_number_to_str(number);
-		in = in + num_str;
-		return in;
+	//string num_str = convert_number_to_str(number);
+	char buf[5];
+	string num_str(itoa(number, buf, 10));
+	in = in + num_str;
+	return in;
 }
 
 string convert_number_to_str(int n)
@@ -128,9 +130,8 @@ string convert_number_to_str(int n)
 	ostringstream conv;
 	conv.clear();
 	conv << n;
-	// cout << "out string: " << conv.str() << endl;
+	cout << "out string: " << conv.str() << endl;
 	return conv.str();
-
 }
 
 /* deprecated version which is horrible, but

@@ -105,6 +105,14 @@ Context(AFizzBuzzConverter)
 		int array4[10] = {1, 2, 7, 13, 30, 222, 223, 13340, 13342};
 		Assert::That(fizzBuzz(array4, 9), Equals("1, 2, 7, 13, FizzBuzz, Fizz, 223, Buzz, 13342"));
 	}
+
+	Spec(ShouldOutputMixForMultipleOf7)
+	{
+		int array[4] = {3, 5, 7, 2};
+		Assert::That(fizzBuzz(array, 4), Equals("Fizz, Buzz, Mix, 2"));
+		int array1[4] = {75};
+				Assert::That(fizzBuzz(array1, 1), Equals("FizzBuzzMix"));
+	}
 };
 
 string operator + (string& in, int number) {

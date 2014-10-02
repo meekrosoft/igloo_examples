@@ -76,10 +76,10 @@ Context(AFizzBuzzConverter)
 			Assert::That(fizzBuzz(array, 1), Equals("1"));
 			int array2[10] = {1, 2};
 			Assert::That(fizzBuzz(array2, 2), Equals("1, 2"));
-			int array3[10] = {1, 2, 7, 13};
-			Assert::That(fizzBuzz(array3, 4), Equals("1, 2, 7, 13"));
-			int array4[10] = {1, 2, 7, 13, 223, 13342};
-			Assert::That(fizzBuzz(array4, 6), Equals("1, 2, 7, 13, 223, 13342"));
+			int array3[10] = {1, 2, 8, 13};
+			Assert::That(fizzBuzz(array3, 4), Equals("1, 2, 8, 13"));
+			int array4[10] = {1, 2, 8, 13, 223, 13343};
+			Assert::That(fizzBuzz(array4, 6), Equals("1, 2, 8, 13, 223, 13343"));
 		}
 
 	Spec(ShouldOutputFizzAndBuzzWhenMultipesOf_3or5or_Both)
@@ -100,17 +100,17 @@ Context(AFizzBuzzConverter)
 		Assert::That(fizzBuzz(array, 1), Equals("Fizz"));
 		int array2[10] = {9, 11};
 		Assert::That(fizzBuzz(array2, 2), Equals("Fizz, 11"));
-		int array3[10] = {1, 2, 7, 35};
-		Assert::That(fizzBuzz(array3, 4), Equals("1, 2, 7, Buzz"));
-		int array4[10] = {1, 2, 7, 13, 30, 222, 223, 13340, 13342};
-		Assert::That(fizzBuzz(array4, 9), Equals("1, 2, 7, 13, FizzBuzz, Fizz, 223, Buzz, 13342"));
+		int array3[10] = {1, 2, 8, 37};
+		Assert::That(fizzBuzz(array3, 4), Equals("1, 2, 8, 37"));
+		int array4[10] = {1, 2, 8, 13, 30, 222, 223, 13340, 13343};
+		Assert::That(fizzBuzz(array4, 9), Equals("1, 2, 8, 13, FizzBuzz, Fizz, 223, Buzz, 13343"));
 	}
 
 	Spec(ShouldOutputMixForMultipleOf7)
 	{
 		int array[4] = {3, 5, 7, 2};
 		Assert::That(fizzBuzz(array, 4), Equals("Fizz, Buzz, Mix, 2"));
-		int array1[4] = {75};
+		int array1[4] = {105};
 				Assert::That(fizzBuzz(array1, 1), Equals("FizzBuzzMix"));
 	}
 };

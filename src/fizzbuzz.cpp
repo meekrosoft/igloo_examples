@@ -20,18 +20,18 @@ string operator + (string& in, int number);
 string fizzBuzz (int i_array[], int size) {
 	string out = "";
 	int index = 0;
-
+	string add_s = "";
 	while (size > 0) {
-		if (i_array[index]%15 == 0)
-			out = out + "FizzBuzz";
-		else if (i_array[index]%3 == 0)
-			out = out + "Fizz";
-		else if (i_array[index]%5 == 0)
-			out = out + "Buzz";
-		else
+		if (i_array[index]%3 == 0)
+			add_s =  "Fizz";
+		if (i_array[index]%5 == 0)
+			add_s = add_s + "Buzz";
+		if (add_s.empty())
 			// out = out + convert_number_to_str(i_array[index]);
 			// out = out + (char)(i_array[index]);
-			out = out + i_array[index];
+			add_s = add_s + i_array[index];
+		out = out + add_s;
+		add_s.clear();
 
 		size--; index++;
 		if (size != 0)

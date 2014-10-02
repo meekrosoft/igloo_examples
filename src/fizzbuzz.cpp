@@ -39,7 +39,7 @@ string fizzBuzz (int i_array[], int size) {
 		out = out + ", "; // delimiter required
 	}
 	// return without the last redundant delimiter
-	out.erase(out.length()-2, 2);
+	out = out.substr(0, out.length()-2);
 	return out;
 
 }

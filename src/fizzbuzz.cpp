@@ -33,7 +33,7 @@ string fizzBuzz (int i_array[], int size) {
 		if (i_array[index] %5 == 0)
 			add_s = add_s + "Buzz";
 		if (i_array[index] %7 == 0)
-					add_s = add_s + "Mix";
+			add_s = add_s + "Mix";
 		if (add_s.empty())
 			out = out + i_array[index];
 		else
@@ -133,7 +133,8 @@ string convert_number_to_str(int n)
 
 }
 
-/* deprecated version which is horrible, but here FWIW
+/* deprecated version which is horrible, but
+ * here FWIW
  *
  */
 string convert_number_to_str2(int n)

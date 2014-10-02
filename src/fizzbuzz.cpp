@@ -32,6 +32,8 @@ string fizzBuzz (int i_array[], int size) {
 			add_s =  "Fizz";
 		if (i_array[index] %5 == 0)
 			add_s = add_s + "Buzz";
+		if (i_array[index] %7 == 0)
+					add_s = add_s + "Mix";
 		if (add_s.empty())
 			out = out + i_array[index];
 		else

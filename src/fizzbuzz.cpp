@@ -17,27 +17,9 @@ using namespace std;
 string convert_number_to_str (int);
 string operator + (string& in, int number);
 
-string fizz (int n) {
-	if (n%3 == 0)
-		return "Fizz";
-	else
-		return "";
-}
-
-string buzz (int n) {
-	if (n%5 == 0)
-		return "Buzz";
-	else
-		return "";
-}
-
-string mix (int n) {
-	if (n%7 == 0)
-		return "Mix";
-	else
-		return "";
-}
-
+string fizz(int n){return ((n%3 == 0)? "Fizz": "");}
+string buzz(int n){return ((n%5 == 0)? "Buzz": "");}
+string mix(int n){return ((n%7 == 0)? "Mix": "");}
 
 string fizzBuzz (int i_array[], int size) {
 	string out = "";

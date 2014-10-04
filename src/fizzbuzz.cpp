@@ -17,25 +17,44 @@ using namespace std;
 string convert_number_to_str (int);
 string operator + (string& in, int number);
 
+string fizz (int n) {
+	if (n%3 == 0)
+		return "Fizz";
+	else
+		return "";
+}
+
+string buzz (int n) {
+	if (n%5 == 0)
+		return "Buzz";
+	else
+		return "";
+}
+
+string mix (int n) {
+	if (n%7 == 0)
+		return "Mix";
+	else
+		return "";
+}
+
+
 string fizzBuzz (int i_array[], int size) {
 	string out = "";
 	string add_s = ""; // what to add?
+	int n;
 
-	for (int index = 0; // start from the front
+	for (int i = 0; // start from the front
 		 size > 0;
-		 add_s.clear(), size--, index++)
+		 add_s.clear(),
+		 size--, i++)
 	{
-		if (i_array[index] %3 == 0)
-			add_s =  "Fizz";
-		if (i_array[index] %5 == 0)
-			add_s = add_s + "Buzz";
-		if (i_array[index] %7 == 0)
-			add_s = add_s + "Mix";
-
+		n = i_array[i];
+		add_s = fizz(n) + buzz(n) + mix(n);
 		if (add_s.empty())
-			out = out + i_array[index];
-		else
-			out = out + add_s;
+			add_s = add_s + n;
+
+		out = out + add_s;
 		out = out + ", "; // delimiter required
 	}
 	// return without the last redundant delimiter

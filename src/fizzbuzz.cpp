@@ -14,7 +14,7 @@ using namespace std;
 #include <sstream>
 
 // two helper functions
-string convert_number_to_str (int);
+string itoa (int);
 string operator + (string& in, int number);
 
 string fizz(int n){return ((n%3 == 0)? "Fizz": "");}
@@ -32,12 +32,10 @@ string fizzBuzz (int i_array[], int size) {
 		 size--, i++)
 	{
 		n = i_array[i];
-		add_s = fizz(n) + buzz(n) + mix(n);
-		if (add_s.empty())
-			add_s = add_s + n;
+		add_s = (n%3 && n%5 && n%7) ? itoa(n):
+				(fizz(n) + buzz(n) + mix(n));
 
-		out = out + add_s;
-		out = out + ", "; // delimiter required
+		out = out + add_s + ", ";
 	}
 	// return without the last redundant delimiter
 	out = out.substr(0, out.length()-2);
@@ -128,12 +126,13 @@ string operator + (string& in, int number) {
 	return in;
 }
 
-string convert_number_to_str(int n)
+// string version of the non-standard itoa
+string itoa(int n)
 {
 	ostringstream conv;
 	conv.clear();
 	conv << n;
-	cout << "out string: " << conv.str() << endl;
+	// cout << "out string: " << conv.str() << endl;
 	return conv.str();
 }
 

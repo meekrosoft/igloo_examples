@@ -17,30 +17,27 @@ using namespace std;
 string itoa (int);
 string operator + (string& in, int number);
 
-string fizz(int n){return ((n%3 == 0)? "Fizz": "");}
-string buzz(int n){return ((n%5 == 0)? "Buzz": "");}
-string mix(int n){return ((n%7 == 0)? "Mix": "");}
+string fizz(int n){return n%3? "": "Fizz";}
+string buzz(int n){return n%5? "": "Buzz";}
+string mix(int n){return  n%7? "": "Mix";}
 
 string fizzBuzz (int i_array[], int size) {
 	string out = "";
 	string add_s = ""; // what to add?
 	int n;
 
-	for (int i = 0; // start from the front
-		 size > 0;
-		 add_s.clear(),
-		 size--, i++)
+	for (int i = 0; size > 0; size--, i++)
 	{
 		n = i_array[i];
 		add_s = n%3 && n%5 && n%7 ? itoa(n):
 				fizz(n) + buzz(n) + mix(n);
 
 		out = out + add_s + ", ";
+		add_s.clear();
 	}
 	// return without the last redundant delimiter
 	out = out.substr(0, out.length()-2);
 	return out;
-
 }
 
 Context(AFizzBuzzConverter)

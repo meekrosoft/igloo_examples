@@ -33,7 +33,6 @@ string fizzBuzz (int i_array[], int size) {
 				fizz(n) + buzz(n) + mix(n);
 
 		out = out + add_s + ", ";
-		add_s.clear();
 	}
 	// return without the last redundant delimiter
 	out = out.substr(0, out.length()-2);

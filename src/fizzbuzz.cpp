@@ -22,11 +22,9 @@ string buzz(int n){return n%5? "": "Buzz";}
 string mix(int n){return  n%7? "": "Mix";}
 
 string fizzBuzz (int i_array[], int size) {
-	string out = "";
-	string add_s = ""; // what to add?
-	int n;
+	string out = "", add_s;
 
-	for (int i = 0; size > 0; size--, i++)
+	for (int i = 0, n; i < size; i++)
 	{
 		n = i_array[i];
 		add_s = n%3 && n%5 && n%7 ? itoa(n):

@@ -32,8 +32,8 @@ string fizzBuzz (int i_array[], int size) {
 		 size--, i++)
 	{
 		n = i_array[i];
-		add_s = (n%3 && n%5 && n%7) ? itoa(n):
-				(fizz(n) + buzz(n) + mix(n));
+		add_s = n%3 && n%5 && n%7 ? itoa(n):
+				fizz(n) + buzz(n) + mix(n);
 
 		out = out + add_s + ", ";
 	}

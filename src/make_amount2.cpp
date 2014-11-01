@@ -37,8 +37,7 @@ int make_amount (int amount, vector<int>& denominations)
 	if (denominations.size() == 0)
 		return 0;
 
-	// cout << "Checking ways to make " << amount << " with " << make_str(denominations) << endl;
-	cout << "Checking ways to make " << amount << " with " << denominations << endl;
+	// cout << "Checking ways to make " << amount << " with " << denominations << endl;
 	// python code: current_coin, rest_of_coins = denominations[0], denominations[1:]
 	int current_coin = denominations[0];
 	vector<int> rest_of_coins (denominations.begin()+1, denominations.end());

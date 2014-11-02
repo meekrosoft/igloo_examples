@@ -13,6 +13,14 @@ using namespace std;
 
 #include <vector>
 
+ostream& operator << (ostream& os, vector<int>&  v)
+{
+	for (unsigned int i = 0; i < v.size() ; i++)
+			os << v[i] << " ";
+	return os;
+
+}
+
 int make_amount(int amount, vector<int>& denominations)
 {
 	if (amount == 0)
@@ -21,6 +29,8 @@ int make_amount(int amount, vector<int>& denominations)
 	  return 0;
 	if (denominations.size() == 0)
 		return 0;
+
+	cout << "Checking ways to make " << amount << " with " << denominations << endl;
 
 	int current_coin = denominations[0];
 	vector<int> rest_of_coins (denominations.begin()+1, denominations.end());

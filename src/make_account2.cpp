@@ -8,6 +8,11 @@
 #include <igloo/igloo.h>
 using namespace igloo;
 
+int make_amount(int amount, int denominations[], int dsize)
+{
+	return 1;
+}
+
 Context(AAmountConverter)
 {
 	Spec(ShouldOutput0ForNegative1)

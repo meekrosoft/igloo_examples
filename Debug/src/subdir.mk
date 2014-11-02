@@ -7,18 +7,21 @@ CPP_SRCS += \
 ../src/fizzbuzz.cpp \
 ../src/leap_years.cpp \
 ../src/main.cpp \
+../src/make_account2.cpp \
 ../src/roman_numerals.cpp 
 
 OBJS += \
 ./src/fizzbuzz.o \
 ./src/leap_years.o \
 ./src/main.o \
+./src/make_account2.o \
 ./src/roman_numerals.o 
 
 CPP_DEPS += \
 ./src/fizzbuzz.d \
 ./src/leap_years.d \
 ./src/main.d \
+./src/make_account2.d \
 ./src/roman_numerals.d 
 
 

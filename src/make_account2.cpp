@@ -12,9 +12,11 @@ int make_amount(int amount, int denominations[], int dsize)
 {
 	if (amount < 0)
 		return 0;
+	if (dsize == 0)
+		return 0;
 	if (amount == 0)
 		return 1;
-	return 1;
+
 }
 
 Context(AAmountConverter)

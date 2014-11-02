@@ -14,6 +14,7 @@ int make_amount(int amount, int denominations[], int dsize)
 		return 0;
 	if (amount == 0)
 		return 1;
+	return 1;
 }
 
 Context(AAmountConverter)
@@ -28,9 +29,9 @@ Context(AAmountConverter)
 	  int d[1] = {1};
 	  Assert::That(make_amount(0, d, 1), Equals(1));
 	}
-	Spec(ShouldOutput0For0andNull)
+	Spec(ShouldOutput0For1andNull)
 	{
-	  Assert::That(make_amount(0, {}, 0), Equals(0));
+	  Assert::That(make_amount(1, {}, 0), Equals(0));
 	}
 
 };

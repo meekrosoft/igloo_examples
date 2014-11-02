@@ -38,6 +38,12 @@ int make_amount(int amount, int denominations[], int dsize)
 	return count;
 }
 
+int make_amount_new(int amount, int denominations[], int size)
+{
+	vector<int> v_d(denominations, denominations+size);
+	// return make_amount(amount, v_d);
+	return 0;
+}
 
 Context(AAmountConverter)
 {

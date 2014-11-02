@@ -10,7 +10,10 @@ using namespace igloo;
 
 int make_amount(int amount, int denominations[], int dsize)
 {
-	return 0;
+	if (amount < 0)
+		return 0;
+	if (amount == 0)
+		return 1;
 }
 
 Context(AAmountConverter)

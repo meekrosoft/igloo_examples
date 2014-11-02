@@ -30,7 +30,7 @@ int make_amount(int amount, vector<int>& denominations)
 	if (denominations.size() == 0)
 		return 0;
 
-	cout << "Checking ways to make " << amount << " with " << denominations << endl;
+	// cout << "Checking ways to make " << amount << " with " << denominations << endl;
 
 	int current_coin = denominations[0];
 	vector<int> rest_of_coins (denominations.begin()+1, denominations.end());

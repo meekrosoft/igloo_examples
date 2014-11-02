@@ -12,6 +12,7 @@ using namespace igloo;
 using namespace std;
 
 #include <vector>
+#include <map>
 
 ostream& operator << (ostream& os, vector<int>&  v)
 {
@@ -38,6 +39,7 @@ int make_amount(int amount, vector<int>& denominations)
 	int count = 0;
 	while (amount >= 0)
 	{
+		// need to introduce memoization here. How?
 		count += make_amount(amount, rest_of_coins);
 		amount = amount - current_coin;
 	}

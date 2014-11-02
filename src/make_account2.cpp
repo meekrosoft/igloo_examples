@@ -28,6 +28,10 @@ Context(AAmountConverter)
 	  int d[1] = {1};
 	  Assert::That(make_amount(0, d, 1), Equals(1));
 	}
+	Spec(ShouldOutput0For0andNull)
+	{
+	  Assert::That(make_amount(0, {}, 0), Equals(0));
+	}
 
 };
 

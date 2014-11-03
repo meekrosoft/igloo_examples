@@ -14,29 +14,26 @@ using namespace std;
 #include <sstream>
 
 // two helper functions
-string convert_number_to_str (int);
+string itoa (int);
 string operator + (string& in, int number);
 
+string fizz(int n){return n%3? "": "Fizz";}
+string buzz(int n){return n%5? "": "Buzz";}
+string mix(int n){return  n%7? "": "Mix";}
+
 string fizzBuzz (int i_array[], int size) {
-	string out = "";
-	int index = 0;
+	string out = "", add_s;
 
-	while (size > 0) {
-		if (i_array[index]%15 == 0)
-			out = out + "FizzBuzz";
-		else if (i_array[index]%3 == 0)
-			out = out + "Fizz";
-		else if (i_array[index]%5 == 0)
-			out = out + "Buzz";
-		else
-			// out = out + convert_number_to_str(i_array[index]);
-			// out = out + (char)(i_array[index]);
-			out = out + i_array[index];
+	for (int i = 0, n; i < size; i++)
+	{
+		n = i_array[i];
+		add_s = n%3 && n%5 && n%7 ? itoa(n):
+				fizz(n) + buzz(n) + mix(n);
 
-		size--; index++;
-		if (size != 0)
-			out = out + ", ";
+		out = out + add_s + ", ";
 	}
+	// return without the last redundant delimiter
+	out = out.substr(0, out.length()-2);
 	return out;
 }
 
@@ -44,8 +41,10 @@ Context(AFizzBuzzConverter)
 {
 	Spec(ShouldOutputFizzFor3)
 	{
-		int array[10] = {3};
-		Assert::That(fizzBuzz(array, 1), Equals("Fizz"));
+		// int array[10] = {3};
+		// maybe, this whole set of tests will look more elegant if
+		// vectors are used?
+		Assert::That(fizzBuzz((int[]){3}, 1), Equals("Fizz"));
 	}
 
 	Spec(ShouldOutputBuzzFor5)
@@ -74,10 +73,10 @@ Context(AFizzBuzzConverter)
 			Assert::That(fizzBuzz(array, 1), Equals("1"));
 			int array2[10] = {1, 2};
 			Assert::That(fizzBuzz(array2, 2), Equals("1, 2"));
-			int array3[10] = {1, 2, 7, 13};
-			Assert::That(fizzBuzz(array3, 4), Equals("1, 2, 7, 13"));
-			int array4[10] = {1, 2, 7, 13, 223, 13342};
-			Assert::That(fizzBuzz(array4, 6), Equals("1, 2, 7, 13, 223, 13342"));
+			int array3[10] = {1, 2, 8, 13};
+			Assert::That(fizzBuzz(array3, 4), Equals("1, 2, 8, 13"));
+			int array4[10] = {1, 2, 8, 13, 223, 13343};
+			Assert::That(fizzBuzz(array4, 6), Equals("1, 2, 8, 13, 223, 13343"));
 		}
 
 	Spec(ShouldOutputFizzAndBuzzWhenMultipesOf_3or5or_Both)
@@ -98,30 +97,41 @@ Context(AFizzBuzzConverter)
 		Assert::That(fizzBuzz(array, 1), Equals("Fizz"));
 		int array2[10] = {9, 11};
 		Assert::That(fizzBuzz(array2, 2), Equals("Fizz, 11"));
-		int array3[10] = {1, 2, 7, 35};
-		Assert::That(fizzBuzz(array3, 4), Equals("1, 2, 7, Buzz"));
-		int array4[10] = {1, 2, 7, 13, 30, 222, 223, 13340, 13342};
-		Assert::That(fizzBuzz(array4, 9), Equals("1, 2, 7, 13, FizzBuzz, Fizz, 223, Buzz, 13342"));
+		int array3[10] = {1, 2, 8, 37};
+		Assert::That(fizzBuzz(array3, 4), Equals("1, 2, 8, 37"));
+		int array4[10] = {1, 2, 8, 13, 30, 222, 223, 13340, 13343};
+		Assert::That(fizzBuzz(array4, 9), Equals("1, 2, 8, 13, FizzBuzz, Fizz, 223, Buzz, 13343"));
+	}
+
+	Spec(ShouldOutputMixForMultipleOf7)
+	{
+		int array[4] = {3, 5, 7, 2};
+		Assert::That(fizzBuzz(array, 4), Equals("Fizz, Buzz, Mix, 2"));
+		int array1[4] = {105};
+				Assert::That(fizzBuzz(array1, 1), Equals("FizzBuzzMix"));
 	}
 };
 
 string operator + (string& in, int number) {
-		string num_str = convert_number_to_str(number);
-		in = in + num_str;
-		return in;
+	//string num_str = convert_number_to_str(number);
+	char buf[5];
+	string num_str(itoa(number, buf, 10));
+	in = in + num_str;
+	return in;
 }
 
-string convert_number_to_str(int n)
+// string version of the non-standard itoa
+string itoa(int n)
 {
 	ostringstream conv;
 	conv.clear();
 	conv << n;
 	// cout << "out string: " << conv.str() << endl;
 	return conv.str();
-
 }
 
-/* deprecated version which is horrible, but here FWIW
+/* deprecated version which is horrible, but
+ * here FWIW
  *
  */
 string convert_number_to_str2(int n)

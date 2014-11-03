@@ -62,16 +62,9 @@
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.cygwin.exe.debug.206081528" name="Cygwin C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.cygwin.exe.debug.1833919750"/>
 						</toolChain>
 					</folderInfo>
-					<folderInfo id="cdt.managedbuild.config.gnu.cygwin.exe.debug.688916811.999613839" name="/" resourcePath="src/igloo">
-						<toolChain id="cdt.managedbuild.toolchain.gnu.cygwin.exe.debug.1283272671" name="Cygwin GCC" superClass="cdt.managedbuild.toolchain.gnu.cygwin.exe.debug" unusedChildren="">
-							<tool id="cdt.managedbuild.tool.gnu.assembler.cygwin.exe.debug.1451232702" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.cygwin.exe.debug.1493156923"/>
-							<tool id="cdt.managedbuild.tool.gnu.archiver.cygwin.base.469657541" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.cygwin.base.2138215218"/>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.exe.debug.1206107091" name="Cygwin C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.exe.debug.1057733884"/>
-							<tool id="cdt.managedbuild.tool.gnu.c.compiler.cygwin.exe.debug.1990359832" name="Cygwin C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.cygwin.exe.debug.522138856"/>
-							<tool id="cdt.managedbuild.tool.gnu.c.linker.cygwin.exe.debug.1330241555" name="Cygwin C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.cygwin.exe.debug.579211730"/>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.cygwin.exe.debug.1631692408" name="Cygwin C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.cygwin.exe.debug.206081528"/>
-						</toolChain>
-					</folderInfo>
+					<sourceEntries>
+						<entry excluding="src/make_amount.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
@@ -117,6 +110,9 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<sourceEntries>
+						<entry excluding="src/make_amount.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
@@ -141,4 +137,5 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope"/>
 </cproject>
